@@ -1,0 +1,23 @@
+<div class="pageTitle">
+  <h1><%= @submit_story.story %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :index %>">Back</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a href="<%= url_for :action => :edit, :id => @submit_story.object %>">Edit</a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    
+        <li>
+          <div class="itemLabel">Story</div>
+          <div class="itemValue"><%= @submit_story.story %></div>
+        </li>
+    
+  </ul>
+</div>

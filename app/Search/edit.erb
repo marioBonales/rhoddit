@@ -1,0 +1,27 @@
+<div class="pageTitle">
+  <h1>Edit <%= @search.word %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @search.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @search.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @search.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="search[word]" class="fieldLabel">Word</label>
+            <input type="text" name="search[word]" value="<%= @search.word %>" <%= placeholder( "Word" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>

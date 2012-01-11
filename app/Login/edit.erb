@@ -1,0 +1,27 @@
+<div class="pageTitle">
+  <h1>Edit <%= @login.user %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @login.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @login.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @login.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="login[user]" class="fieldLabel">User</label>
+            <input type="text" name="login[user]" value="<%= @login.user %>" <%= placeholder( "User" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>

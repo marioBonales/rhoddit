@@ -1,0 +1,25 @@
+<div class="pageTitle">
+  <h1>New <%= @submit_story.title %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="cancel" href="<%= url_for :action => :index %>">Cancel</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :create %>">
+    <input type="hidden" name="id" value="<%= @submit_story.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="submit_story[story]" class="fieldLabel">Story</label>
+            <input type="text" name="submit_story[story]" <%=
+            placeholder("Story") %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Create"/>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+<div class="pageTitle">
+  <h1>Edit <%= @whats_hot.user %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @whats_hot.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @whats_hot.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @whats_hot.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="whats_hot[user]" class="fieldLabel">User</label>
+            <input type="text" name="whats_hot[user]" value="<%= @whats_hot.user %>" <%= placeholder( "User" ) %> />
+          </li>
+      
+          <li>
+            <label for="whats_hot[story]" class="fieldLabel">Story</label>
+            <input type="text" name="whats_hot[story]" value="<%= @whats_hot.story %>" <%= placeholder( "Story" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>

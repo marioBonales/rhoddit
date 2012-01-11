@@ -1,0 +1,37 @@
+<div class="pageTitle">
+  <h1>New <%= @user_info.title %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="cancel" href="<%= url_for :action => :index %>">Cancel</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :create %>">
+    <input type="hidden" name="id" value="<%= @user_info.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="user_info[user]" class="fieldLabel">User</label>
+            <input type="text" name="user_info[user]" <%=
+            placeholder("User") %> />
+          </li>
+      
+          <li>
+            <label for="user_info[karma]" class="fieldLabel">Karma</label>
+            <input type="text" name="user_info[karma]" <%=
+            placeholder("Karma") %> />
+          </li>
+      
+          <li>
+            <label for="user_info[stories]" class="fieldLabel">Stories</label>
+            <input type="text" name="user_info[stories]" <%=
+            placeholder("Stories") %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Create"/>
+  </form>
+</div>

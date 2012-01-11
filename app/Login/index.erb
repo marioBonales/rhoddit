@@ -1,0 +1,19 @@
+<div class="pageTitle">
+  <h1>Login</h1>
+</div>
+
+<% if $cookie == nil %>
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :reddit %>">
+    <div><label for="user">Username:</label><input type="text" name="user" id="user"></div>
+    <div><label for="password">Password:</label><input type="password" name="passwd" id="password"></div>
+    <div><input type="submit" value="Login"></div>
+  </form>
+<% else
+       if $cookie["reddit_session"] %>
+    <div>Welcome to Reddit, now you'll be able to post and stuff :D</div>
+    <% else %>
+    <div>Username/Password incorrect D:</div>
+    <% end %>
+<% end %>
+</div>

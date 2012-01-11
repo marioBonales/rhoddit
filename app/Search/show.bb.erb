@@ -1,0 +1,21 @@
+<div id="pageTitle">
+	<h1><%= @search.word%></h1>
+</div>
+
+<div id="toolbar">
+        <%= link_to "Back", :action => :index %>
+        <%= link_to "Edit", :action => :edit, :id => @search.object %>
+</div>
+
+
+<div id="content">
+
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Word</td>
+        <td class="itemValue"><%= @search.word%></td>
+      </tr>
+      
+    </table>
+</div>

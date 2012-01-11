@@ -1,0 +1,28 @@
+<div class="pageTitle">
+  <h1>SubmitStories</h1>
+</div>
+
+
+<div class="content">
+<form method="POST" action="<%= url_for :action => :create %>">
+
+    <input type="hidden" name="id" value="<%# @submit_story.object %>"/>
+    <ul>
+           <li>
+            <div><label for="story[type]" class="fieldLabel">Type:</label></div>
+            <div><input type="radio" name="story[type]">Link</div>
+            <div><input type="radio" name="story[type]">Text</div>
+          </li>
+          <li>
+            <label for="story[title]" class="fieldLabel">Title</label>
+            <input type="text" name="story[title]">
+          </li>
+          <li>
+            <label for="story[url]" class="fieldLabel">Url/Text</label>
+            <input type="text" name="story[url]">
+          </li>
+
+    </ul>
+    <input type="submit" class="standardButton" value="Submit new Story"/>
+  </form>
+</div>

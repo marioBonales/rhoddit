@@ -1,0 +1,18 @@
+<div class="pageTitle">
+  <h1>Hello</h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :index %>">Back</a>
+  </div>
+
+</div>
+<div class="content">
+  <div class="itemLabel">User:</div>
+  <div class="itemValue"><%= $data %></div>
+  <div class="itemLabel">Link Karma:</div>
+  <div class="itemValue"><%= $linkKarma %></div>
+  <div class="itemLabel">Comment Karma:</div>
+  <div class="itemValue"><%= $commentKarma %></div>
+</div>

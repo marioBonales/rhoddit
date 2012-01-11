@@ -1,0 +1,25 @@
+<div class="pageTitle">
+  <h1>WhatsHot</h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem regularButton">
+    <a href="<%= Rho::RhoConfig.start_path %>">Home</a>
+  </div>
+</div>
+
+<%if $stories != nil %>
+<div class="content">
+  <ul>
+    <%  $stories['data']['children'].each do |story| %>
+	<li>
+	<img src="<%=  story['data']['thumbnail'] %>" />
+	<p><a href="<%= url_for :action => :singleStory %>">Story name! This is the space for the story name!</a></p>
+	<span>by: Davo_or_any_other_user</span>
+	<span>date submited: today </span>
+	<span>Upvotes: 100</span><span>downvotes: 0</span>
+	</li>
+    <%  end %>
+  </ul>
+  <% end %>
+</div>

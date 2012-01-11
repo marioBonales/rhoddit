@@ -1,0 +1,26 @@
+<div class="pageTitle">
+  <h1>Searches</h1>
+</div>
+
+<div class="content">
+<form action="<%= url_for :action => :search %>">
+    <p>Please input your search values in the textbox below:</p>
+    <input style="margin-left:15px; border:1px 1px 1px 1px" name="searchTerms" type="input" />
+    <input type="submit" value="Search :D" />
+</form>
+<%if $stories != nil %>
+  <ul>
+    <%  $stories['data']['children'].each do |story| %>
+	<li>
+    <% if story['data']['thumbnail'] != '' %>
+        <img style="margin: 10 10 10 10" src="<%=  story['data']['thumbnail'] %>" style="float:left;" />
+    <% end %>
+        <p style="margin:0 15px 0 15px"><%= story['data']['title'] %></p>
+        <p>posted by: <%= story['data']['author'] %></p>
+        <p>total score: <%= story['data']['score']%> </p>
+        <p>(ups: <%= story['data']['ups'] %>, downs: <%= story['data']['downs'] %>)</p>
+	</li>
+    <%  end %>
+  </ul>
+<% end %>
+</div>

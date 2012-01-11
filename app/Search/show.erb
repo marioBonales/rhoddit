@@ -1,0 +1,23 @@
+<div class="pageTitle">
+  <h1><%= @search.word %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :index %>">Back</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a href="<%= url_for :action => :edit, :id => @search.object %>">Edit</a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    
+        <li>
+          <div class="itemLabel">Word</div>
+          <div class="itemValue"><%= @search.word %></div>
+        </li>
+    
+  </ul>
+</div>
